@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150">
+    <defs>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1d4ed8;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    <!-- 円形の背景 -->
+    <circle cx="75" cy="75" r="70" fill="url(#grad)" />
+    <!-- 中央のアルファベット "N" -->
+    <text x="75" y="95" font-family="Arial, sans-serif" font-size="80" fill="#ffffff" text-anchor="middle"
+        font-weight="bold">N</text>
+</svg>

@@ -8,21 +8,29 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
     return (
-        <div className="border border-gray-200 p-4 rounded shadow-sm">
-            <h2 className="text-xl text-gray-500">{product.name}</h2>
-            <p className="text-gray-500">￥{Number(product.price)}</p>
-            <Image
-                src={product.imageUrl}
-                alt={product.name}
-                width={500}
-                height={300}
-                className="mb-2 w-full h-auto"
-            />
+        <div className="">
             <Link
-                href={`/products/${product.id}`}
-                className="text-blue-600 hover:underline mt-2 inline-block"
+                href={`/product/${product.id}`}
+                className=""
             >
-                詳細を見る
+                <div>
+                    <Image
+                        src={product.imageUrl}
+                        alt={product.name}
+                        width={300}
+                        height={200}
+                        className="mb-2 rounded w-full h-auto"
+                    />
+                </div>
+                <div className="p-1">
+                    <div className="text-sm text-gray-800">{product.name}</div>
+                    <div>
+                        <span className="p-1 text-xs text-gray-600">&yen;</span>
+                        <span className="text-sm text-gray-800">
+                            {Number(product.price).toLocaleString()}
+                        </span>
+                    </div>
+                </div>
             </Link>
         </div>
     );

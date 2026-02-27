@@ -28,7 +28,7 @@ export default function Header() {
                 </div>
                 {/* 右側メニュー */}
                 <div className="flex items-center space-x-4">
-                    <a href="/product" className="hover:underline">アイテム</a>
+                    <Link href="/product" className="hover:underline">アイテム</Link>
                     <a href="#" className="hover:underline">アカウント</a>
                     <a href="#" className="hover:underline">注文履歴</a>
                     <a href="#" className="hover:underline">カート</a>

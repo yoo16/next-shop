@@ -6,6 +6,7 @@ interface PageProps {
 }
 
 export default function ProductDetail({ params: { id } }: PageProps) {
+    // TODO: DBから商品情報を取得する
     // dummyProductsをproductsに代入
     const products = dummyProducts;
     // idと一致する商品を取得
@@ -32,12 +33,14 @@ export default function ProductDetail({ params: { id } }: PageProps) {
                 </div>
                 <div>
                     <h1 className="text-2xl font-bold mb-4">{product.name}</h1>
-                    <p className="text-gray-800 mb-2">
+                    <div className="text-gray-800 mb-2">
                         <span className="text-sm">&yen;</span>
                         <span className="p-2 text-2xl">{Number(product.price).toLocaleString()}</span>
                         <span className="p-2 text-sm">(税込)</span>
-                    </p>
-                    <p className="mb-4">{product.description}</p>
+                    </div>
+                    <div className="py-4">
+                        <button className="p-3 bg-red-500 text-white w-full rounded-xl">購入する</button>
+                    </div>
                     <div className="border-t border-gray-300 p-4">
                         <h2 className="text-lg font-semibold mb-2">商品情報</h2>
                         <div className="flex items-center">
@@ -53,14 +56,12 @@ export default function ProductDetail({ params: { id } }: PageProps) {
                         <div className="mt-4">
                             <p>カテゴリー: {product.categoryId}</p>
                             <p>ブランド: {product.brand}</p>
+                            <div className="py-4">
+                                {product.description}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="mt-6">
-                <a href="/product" className="text-blue-600 hover:underline">
-                    商品一覧に戻る
-                </a>
             </div>
         </div>
     );
